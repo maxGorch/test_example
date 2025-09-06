@@ -10,8 +10,6 @@ public class WithFile {
     public ArrayList<ArrayList<Double>> readFile(Reader user_read)  {
 
         ArrayList<ArrayList<Double>> eq_ptr = new ArrayList<>();
-
-
         try (BufferedReader bReader = new BufferedReader(user_read))
         {
             String str;
@@ -32,6 +30,9 @@ public class WithFile {
         }catch (IOException e)
         {
             throw new RuntimeException(e);
+        }catch (NullPointerException e)
+        {
+            throw new NullPointerException(e.getMessage());
         }
         return eq_ptr;
     }
