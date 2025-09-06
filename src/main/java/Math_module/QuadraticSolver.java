@@ -13,15 +13,20 @@ public class QuadraticSolver {
     private double b_arg;
     private double c_arg;
 
-    QuadraticSolver(double user_a, double user_b, double user_c) {
+    public QuadraticSolver() {
+        this.a_arg = 0;
+        this.b_arg = 0;
+        this.c_arg = 0;
+    }
+    public QuadraticSolver(double user_a, double user_b, double user_c) {
         this.a_arg = user_a;
         this.b_arg = user_b;
         this.c_arg = user_c;
     }
-    QuadraticSolver(ArrayList<Double> user_arr) {
-        this.a_arg = user_arr.getFirst();
+    public QuadraticSolver(ArrayList<Double> user_arr) {
+        this.a_arg = user_arr.get(0);
         this.b_arg = user_arr.get(1);
-        this.c_arg = user_arr.getLast();
+        this.c_arg = user_arr.get(2);
     }
 
     //Основные методы(геттеры, сеттеры, hashCode,equals)
@@ -60,24 +65,24 @@ public class QuadraticSolver {
         return Objects.hash(getA_arg(), getB_arg(), getC_arg());
     }
 
-    public ArrayList<Double> solve(QuadraticSolver example) {
+    public ArrayList<Double> solve() {
         ArrayList<Double> roots = new ArrayList<>();
 
-        if (example.getA_arg() == 0)
+        if (getA_arg() == 0)
         {
-            roots.add(((-1) * example.getC_arg()) / example.getB_arg());
+            roots.add(((-1) * getC_arg()) / getB_arg());
         } else {
-            double formula_D = example.getB_arg() * example.getB_arg() - 4 * example.getA_arg() * example.getC_arg();
+            double formula_D = getB_arg() * getB_arg() - 4 * getA_arg() * getC_arg();
             if (formula_D > 0) {
                 roots.add(
-                        ((-1) * example.getB_arg() + sqrt(formula_D)) / (2 * example.getA_arg())
+                        ((-1) * getB_arg() + sqrt(formula_D)) / (2 * getA_arg())
                 );
                 roots.add(
-                        ((-1) * example.getB_arg() - sqrt(formula_D)) / (2 * example.getA_arg())
+                        ((-1) * getB_arg() - sqrt(formula_D)) / (2 * getA_arg())
                 );
             } else if(formula_D ==0){
                 roots.add(
-                        ((-1)*example.getB_arg())/(2*example.getA_arg())
+                        ((-1)*getB_arg())/(2*getA_arg())
                 );
             }
         }
