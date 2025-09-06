@@ -84,6 +84,9 @@ public class QuadraticSolver {
                 roots.add(
                         ((-1)*getB_arg())/(2*getA_arg())
                 );
+            }else
+            {
+                roots.add(Double.NaN);
             }
         }
 
