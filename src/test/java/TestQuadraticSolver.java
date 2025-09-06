@@ -64,5 +64,15 @@ public void textWriterStreamTest1() {
         assertTrue(roots.contains(-0.2679491924311228));
         assertTrue(roots.contains(-3.732050807568877));
     }
+    @Test
+    public void textWriterStreamTest5() {
+        arr_test.add(0.0);
+        arr_test.add(25.0);
+        arr_test.add(5.0);
+        solver = new QuadraticSolver(arr_test);
+        roots = solver.solve();
+        assertEquals(1,roots.size());
+        assertTrue(roots.contains(-0.2));
+    }
 
 }
