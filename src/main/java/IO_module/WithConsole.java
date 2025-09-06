@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class WithConsole
 {
-    public ArrayList<Double> inputOutputWithConsole()
+    public ArrayList<Double> inputWithConsole()
     {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Double> arr_list = new ArrayList<>();
@@ -23,6 +23,11 @@ public class WithConsole
         arr_list.add(coeff_C);
 
         return arr_list;
+    }
+    public void outputWithConsole(ArrayList<Double> user_arr)
+    {
+        for (double i: user_arr)
+            System.out.println(i);
     }
     private static double readDouble(Scanner scanner,String message)
     {
