@@ -5,4 +5,8 @@ package IO_module;
  */
 public class WithConsole
 {
+    public void inputOutputWithConsole()
+    {
+
+    }
 }
