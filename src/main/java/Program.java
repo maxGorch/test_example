@@ -12,8 +12,9 @@ public class Program {
     public static void main(String[] args) throws FileNotFoundException {
         WithConsole console = new WithConsole();
         ArrayList<Double> coeffs_1 = console.inputWithConsole();
-        QuadraticSolver roots_1 = new QuadraticSolver(coeffs_1);
-        ArrayList<Double> result = roots_1.solve();
+        Equation eqWithCoeffs = new Equation(coeffs_1);
+        QuadraticSolver solver = new QuadraticSolver();
+        ArrayList<Double> result = solver.solve(eqWithCoeffs);
         console.outputWithConsole(result);
 
         WithFile file = new WithFile();
@@ -28,8 +29,9 @@ public class Program {
             {
                 for (ArrayList<Double> coeffs:all_coeffs)
                 {
-                    QuadraticSolver solver = new QuadraticSolver(coeffs);
-                    ArrayList<Double> roots =solver.solve();
+
+                    Equation eqWithCoeffs_1 = new Equation(coeffs);
+                    ArrayList<Double> roots =solver.solve(eqWithCoeffs_1);
 
                     file.writeFile(writer,roots);
                     writer.write(System.lineSeparator());
