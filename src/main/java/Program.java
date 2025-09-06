@@ -10,11 +10,11 @@ import java.util.ArrayList;
 
 public class Program {
     public static void main(String[] args) throws FileNotFoundException {
-//        WithConsole console = new WithConsole();
-//        ArrayList<Double> coeffs = console.inputWithConsole();
-//        QuadraticSolver roots = new QuadraticSolver(coeffs);
-//        ArrayList<Double> result = roots.solve();
-//        console.outputWithConsole(result);
+        WithConsole console = new WithConsole();
+        ArrayList<Double> coeffs_1 = console.inputWithConsole();
+        QuadraticSolver roots_1 = new QuadraticSolver(coeffs_1);
+        ArrayList<Double> result = roots_1.solve();
+        console.outputWithConsole(result);
 
         WithFile file = new WithFile();
         try
