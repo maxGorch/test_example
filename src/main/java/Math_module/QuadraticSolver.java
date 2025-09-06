@@ -18,6 +18,11 @@ public class QuadraticSolver {
         this.b_arg = user_b;
         this.c_arg = user_c;
     }
+    QuadraticSolver(ArrayList<Double> user_arr) {
+        this.a_arg = user_arr.getFirst();
+        this.b_arg = user_arr.get(1);
+        this.c_arg = user_arr.getLast();
+    }
 
     //Основные методы(геттеры, сеттеры, hashCode,equals)
     public double getA_arg() {
